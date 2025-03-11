@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebarentaal Herkenning | Pjotters-AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ai-styles.css">
+    <link rel="icon" type="image/png" href="Logo-met.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="Logo-blank.png" alt="Pjotters" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li>⚠️Let op: AI kan fouten maken!</li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="gesture-recognition.html">Gebarentaal</a></li>
+                <li><a href="live-detection.html">Live Detectie</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ai-tools">
+        <div class="tool-section gesture-recognition">
+            <h2>Gebarentaal Herkenning</h2>
+            <p>Real-time gebarentaal herkenning met je webcam. Deze serivce is een demo. Dit is gericht voor de ZipZop-AR.</p>
+            <div class="camera-container">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas id="overlay"></canvas>
+                <button class="cta-primary" id="toggleBtn">Start Herkenning</button>
+            </div>
+            <div class="detection-list">
+                <h3>Herkende Gebaren</h3>
+                <div id="gestureResults" class="results-container"></div>
+            </div>
+        </div>
+    </div>
+    <div class="developer-section">
+        <h3>Voor Developers</h3>
+        <p>Gebruik onze gratis Gesture Recognition API:</p>
+        <pre><code>
+            const gestureAPI = new PjottersGestureAPI();
+            await gestureAPI.detect(imageOrVideo);
+        </code></pre>
+        <a href="https://github.com/pjotters-ai/gesture-recognition-api" class="cta-secondary">
+            <span class="material-icons">code</span>
+            Bekijk Documentatie
+        </a>
+    </div>
+
+    <footer class="ai-footer">
+        <p>⚠️ Let op: AI kan fouten maken!</p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="gesture-recognition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+</body>
+</html> 
